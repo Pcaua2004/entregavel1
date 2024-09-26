@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculador de MDC</title>
+</head>
+<body>
+
+<script>
+    function mdc() {
+        while (true) {
+            alert("Bem-vindo(a) ao calculador de MDC!");
+
+            let entrada = prompt("Digite o valor de A e B separado por espaço.\nEx.: 15 20:");
+            let valores = entrada.split(" ");
+
+            if (valores.length != 2) {
+                alert("Entrada inválida. Por favor, digite dois números separados por espaço.");
+                continue;
+            }
+
+            let a = parseInt(valores[0]);
+            let b = parseInt(valores[1]);
+
+            let menor = Math.min(a, b);
+            let mdc = 1;
+
+            for (let i = 1; i <= menor; i++) {
+                if (a % i === 0 && b % i === 0) {
+                    mdc = i;
+                }
+            }
+
+            alert("O MDC de " + a + " e " + b + " é " + mdc + "!");
+
+            let opcao = parseInt(prompt("Digite 1 para calcular o MDC de outros números ou 2 para sair:"));
+            if (opcao === 2) {
+                alert("Obrigado por usar o calculador de MDC!");
+                break;
+            }
+        }
+    }
+
+    mdc();
+</script>
+
+</body>
+</html>

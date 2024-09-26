@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem de Valores Inteiros</title>
+</head>
+<body>
+
+<script>
+    function contagem() {
+        alert("Bem-vindo(a) ao contador de valores inteiros!");
+
+        let input = prompt("Digite os números do conjunto, separados por espaço.\nEx.: 5 10 15 20 25:");
+        let partes = input.split(" ");
+        let numeros = partes.map(Number);
+
+        let n = parseInt(prompt("Agora, digite o valor de N (limite superior do intervalo):"));
+
+        let primeiroNumero = numeros[0];
+        let contagem = 0;
+
+        for (let num of numeros) {
+            if (num >= primeiroNumero && num <= n) {
+                contagem++;
+            }
+        }
+
+        alert("Há " + contagem + " valores entre " + primeiroNumero + " e " + n + ".");
+
+        let opcao = parseInt(prompt("Digite 1 para realizar outra contagem ou 2 para sair:"));
+
+        if (opcao === 1) {
+            contagem();
+        } else {
+            alert("Obrigado por usar o contador de valores inteiros!");
+        }
+    }
+
+    contagem();
+</script>
+
+</body>
+</html>
