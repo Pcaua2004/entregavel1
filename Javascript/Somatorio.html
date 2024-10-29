@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somador de Números</title>
+</head>
+<body>
+<h1>Somador de Números</h1>
+
+<script>
+    function somatorio() {
+        alert("Bem-vindo ao somador de números!");
+        let input = prompt("Digite os números que você quer somar, separados por espaço.\nEx.: 10 20 30");
+
+        let numeros = input.split(" ");
+        let soma = 0;
+
+        for (let i = 0; i < numeros.length; i++) {
+            soma += parseInt(numeros[i]);
+        }
+
+        alert("A soma dos números é: " + soma);
+
+        let opcao = prompt("Deseja somar mais números? Digite 'sim' para continuar ou qualquer outra tecla para sair.");
+
+        if (opcao.toLowerCase() === 'sim') {
+            somatorio();
+        } else {
+            alert("Obrigado por usar o somador de números!");
+        }
+    }
+
+    somatorio();
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrimoChecker</title>
+</head>
+<body>
+<h1>PrimoChecker</h1>
+
+<script>
+    function primoChecker() {
+        alert("--------------------------------\nBem-vindo(a) ao PrimoChecker!");
+        while (true) {
+            let numero = parseInt(prompt("Digite um número:"));
+
+            if (isNaN(numero)) {
+                alert("Por favor, digite um número válido.");
+                continue;
+            }
+
+            let divisores = 0;
+
+            for (let count = 1; count <= numero; count++) {
+                if (numero % count === 0) {
+                    divisores++;
+                }
+            }
+
+            if (divisores === 2) {
+                alert(numero + " é primo!\n--------------------------------");
+                break;
+            } else {
+                alert(numero + " não é primo, tente novamente.\n--------------------------------");
+            }
+        }
+    }
+
+    primoChecker();
+</script>
+</body>
+</html>

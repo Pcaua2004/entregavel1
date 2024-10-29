@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Fibonacci</title>
+</head>
+<body>
+<h1>Gerador de Fibonacci</h1>
+<p>Abra o console para visualizar as interações e gerar a sequência de Fibonacci.</p>
+
+<script>
+    function fibonacci() {
+        alert("--------------------------------");
+        alert("Bem-vindo(a) ao Gerador de Fibonacci!");
+
+        let N;
+
+        while (true) {
+            N = parseInt(prompt("Digite quantos números (N) seu Fibonacci terá!\nOBS: N > 1:"));
+
+            if (N > 1) {
+                break;
+            } else {
+                alert("O número deve ser maior que 1. Tente novamente.");
+                alert("--------------------------------");
+            }
+        }
+
+        let a = 0;
+        let b = 1;
+
+        let resultado = "Sequência de Fibonacci até " + N + " termos:\n";
+        resultado += "--------------------------------\n";
+
+        for (let i = 0; i < N; i++) {
+            resultado += a + " ";
+            let proximoTermo = a + b;
+            a = b;
+            b = proximoTermo;
+        }
+
+        alert(resultado);
+
+        alert("--------------------------------");
+        let opcao = parseInt(prompt("Digite 1 para gerar outra sequência ou 2 para sair:"));
+
+        if (opcao === 1) {
+            fibonacci();
+        } else {
+            alert("Obrigado por usar o Gerador de Fibonacci!");
+        }
+    }
+
+    fibonacci();
+</script>
+</body>
+</html>
